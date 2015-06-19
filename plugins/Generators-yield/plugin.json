@@ -1,0 +1,12 @@
+{
+    "intro": "What does the following log to the console?",
+    "answers": [
+        "Nothing",
+        "1",
+        "undefined",
+        "null"
+    ],
+    "correct": 1,
+    "code": "code.js",
+    "readme": "README.md"
+}
