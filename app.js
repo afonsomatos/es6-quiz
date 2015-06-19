@@ -64,12 +64,9 @@ function showScore () {
     // and the wrong answers and the passed questions
     log('',
         'You have finished the quiz! Here are your results:',
-        'Correct answers: '  + String(correct.size).bold.green);
-
-    // Passed questions
-    log('Passed questions: ' + String(passed.size).bold.yellow,
-    // Wrong answers
-        'Wrong answers: ' + String(wrong.size).bold.red);
+        'Correct answers: '  + String(correct.size).bold.green,
+        'Passed questions: ' + String(passed.size).bold.yellow,
+        'Wrong answers: '    + String(wrong.size).bold.red);
 
     for (let [name, obj] of [...wrong, ...passed]) {
         // Pull some important information
