@@ -2,7 +2,9 @@
 // to compile and run or require `babel` from here or use
 // other transpiler / javascript engine that supports ES6
 
-import app from './realIndex';
+'use strict';
 
-// ES5 version:
-// const app = require('./src/app');
+require('babel/register');
+require('./app.js');
+
+// import app from './app.js';
