@@ -1,4 +1,4 @@
-// ES5 Question-maker
+// ES5
 const fs       = require('fs');
 const readline = require('readline');
 
@@ -102,5 +102,5 @@ function askCorrect () {
     });
 }
 
-// Start the question-maker
+// Start the process
 next();
