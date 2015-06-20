@@ -1,3 +1,4 @@
 {
-    "plugins": ["Generators-yield"]
+    "plugins": [
+        "generators-yield"]
 }
