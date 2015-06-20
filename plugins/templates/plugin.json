@@ -1,0 +1,1 @@
+{"intro":"What's the output?","answers":["foo bar foo undefined","foo bar foo bar","foo bar undefined","foo undefined"],"correct":3,"code":"code.js","readme":"README.md"}

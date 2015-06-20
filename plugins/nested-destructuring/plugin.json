@@ -1,1 +1,1 @@
-{"intro":"What are the values of a and b?","answers":["a = undefined, b = [undefined,undefined]","ReferenceError","a = undefined, b = [undefined]","a = [undefined,undefined], b = [undefined,undefined]"],"correct":2,"code":"code.js","readme":"README.md"}
+{"intro":"What are the values of `a` and `b`?","answers":["a = undefined, b = [undefined,undefined]","ReferenceError","a = undefined, b = [undefined]","a = [undefined,undefined], b = [undefined,undefined]"],"correct":2,"code":"code.js","readme":"README.md"}

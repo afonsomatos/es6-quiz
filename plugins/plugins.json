@@ -1,6 +1,14 @@
 {
     "plugins": [
         "generators-yield",
+        "class-keyword",
+        "const",
+        "let",
+        "let-before-init",
+        "set-quantity",
+        "spread-arr",
+        "templates",
+        "templates-2",
         "spread-operator",
         "arrow-this",
         "nested-destructuring"]
