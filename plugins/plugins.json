@@ -1,5 +1,7 @@
 {
     "plugins": [
         "generators-yield",
-        "spread-operator"]
+        "spread-operator",
+        "arrow-this",
+        "nested-destructuring"]
 }

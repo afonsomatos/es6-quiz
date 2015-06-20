@@ -76,11 +76,11 @@ function showScore () {
     // Show the score which is just the percentage of correct answers
     // Handle division by 0 by checking correct.size
     let score = correct.size 
-        ? 100 * Math.round(correct.size / (correct.size + wrong.size))
+        ? Math.round(100 * (correct.size / (correct.size + wrong.size)))
         : 0;
     
     log('',
-        'FINAL SCORE'.rainbow.bold+ ': ' + `${score}`.bold.white);
+        'FINAL SCORE'.rainbow.bold+ ': ' + `${score}%`.bold.white);
 
     return process.exit();
 }
