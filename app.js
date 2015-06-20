@@ -8,7 +8,7 @@ const VERSION = '1.0.0';
 const ALPHA   = 'abcdefghijklmnopqrstuvwxyz';
 
 // Map the question-name to its configuration
-let questions = new Map();
+let plugins = new Map();
 
 let correct = new Map(),
     wrong   = new Map(),
@@ -32,14 +32,15 @@ let rl = readline.createInterface({
 
 function loadQuestions (num = null) {
 
-    // Load the questions
+    // Load the plugins
     let list = JSON.parse(
-        fs.readFileSync('./plugins/question-list.json')
-        ).questions;
+        fs.readFileSync('./plugins/plugin-list.json')
+        ).plugins;
 
+    // Set some boundaries
     if (num > list.length || num === null) num = list.length;
 
-    // Let's select n questions
+    // Let's select n plugins
     while (num--) {
         // Select a random index
         let index = Math.floor( Math.random() * list.length),
@@ -48,20 +49,16 @@ function loadQuestions (num = null) {
         let obj = JSON.parse(
             fs.readFileSync(`./plugins/${name}/plugin.json`)
             );
-        // Now append it to the questions list
-        questions.set(name, obj);
+        // Now append it to the plugins list
+        plugins.set(name, obj);
     }
 
-    return questions;
+    return plugins;
 }
 
 function showScore () {
 
-    let questionNum = name => [...questions].findIndex(
-            arr => arr[0] === name);
-
     // The quiz has finished, time to show the score
-    // and the wrong answers and the passed questions
     log('',
         'You have finished the quiz! Here are your results:',
         'Correct answers: '  + String(correct.size).bold.green,
@@ -70,20 +67,20 @@ function showScore () {
 
     for (let [name, obj] of [...wrong, ...passed]) {
         // Pull some important information
-        let num     = questionNum(name) + 1,
+        let num     = [...plugins].findIndex(arr => arr[0] === name) + 1,
             correct = obj.correct;
 
         log(`${name} (${num}) - Correct answer was ${ALPHA[correct]})`);
     }
 
-    // Show the score which is just the precentage of correct answers
+    // Show the score which is just the percentage of correct answers
     // Handle division by 0 by checking correct.size
     let score = correct.size 
         ? 100 * Math.round(correct.size / (correct.size + wrong.size))
         : 0;
     
     log('',
-        'FINAL SCORE'.rainbow.bold+ `: ${score}`);
+        'FINAL SCORE'.rainbow.bold+ ': ' + `${score}`.bold.white);
 
     return process.exit();
 }
@@ -95,9 +92,9 @@ function startQuiz () {
 
     let showQuestion = () => {
 
-        if (i + 1 > questions.size) return showScore();
+        if (i + 1 > plugins.size) return showScore();
 
-        currQuestion = [...questions][i];
+        currQuestion = [...plugins][i];
         name         = currQuestion[0];
         obj          = currQuestion[1];
 
@@ -128,7 +125,7 @@ function startQuiz () {
 
         // `quit` ends the process
         if (answer === 'quit') return process.exit();
-        // `pass` moves to the pass question
+        // `pass` moves to the next question
         // this doesn't count for the score
         if (answer === 'pass') {
             passed.set(name, obj);
@@ -149,7 +146,6 @@ function startQuiz () {
 
         // If it's a valid answer let's
         // check if it's wrong or right
-
         if (answer === ALPHA[obj.correct]) {
             correct.set(name, obj);
         } else {
@@ -167,12 +163,12 @@ function startQuiz () {
 }
 
 // Greetings given at startup
-log('EcmaScript 6 Quiz'.underline + `(${VERSION}) - You think you know ES6?`,
+log('EcmaScript 6 Quiz'.underline + ` (${VERSION}) - You think you know ES6?`,
     'Official github repo: http://github.com/afonsomatos/es6-quiz',
     'Support this app'.bold.yellow + ' by giving us some feedback!',
     '');
 
-// Ask number of questions to be answered
+// Ask number of plugins to be answered
 // Loop till the input is valid
 rl.question('Number of questions: ', num => {
 
