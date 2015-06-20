@@ -49,10 +49,11 @@ function finish () {
     fs.writeFileSync(folder + '/plugin.json', JSON.stringify(config));
 
     log('Creating codecase');
-    fs.writeFileSync(folder + '/code.js', '');
+    fs.writeFileSync(folder + '/' + config.code, '');
 
     log('Creating readme');
-    fs.writeFileSync(folder + '/readme.md', '');
+    fs.writeFileSync(folder + '/' + 
+        config.readme, '#### ' + pluginName);
 
     log('Finished, exiting');
 
@@ -78,8 +79,8 @@ function askIntro () {
 
 function askAnswers () {
     // Array of answers that will display after the code
-    rl.question('Answers (separate by commas): ', function(answers) {
-        config.answers = answers.split(',');
+    rl.question('Answers (separate by space): ', function(answers) {
+        config.answers = answers.split(' ');
         next();
     });
 }

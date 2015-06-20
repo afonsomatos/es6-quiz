@@ -1,0 +1,1 @@
+let sp = [...new Map().set(1, 2)];

@@ -1,4 +1,5 @@
 {
     "plugins": [
-        "generators-yield"]
+        "generators-yield",
+        "spread-operator"]
 }
