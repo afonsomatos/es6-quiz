@@ -6,6 +6,8 @@
 
 # How to use it
 
+Now available in npm, just run `npm install es6-quiz`, or follow this instructions.
+
 First, make sure you have the following modules installed.
 
 ```

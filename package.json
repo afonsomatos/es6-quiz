@@ -1,0 +1,33 @@
+{
+  "name": "es6-quiz",
+  "version": "1.0.0",
+  "description": "EcmaScript 6 Quiz written in ES6 to run in the command line",
+  "main": "index.js",
+  "dependencies": {
+    "babel": "^5.5.8",
+    "colors": "^1.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afonsomatos/es6-quiz"
+  },
+  "keywords": [
+    "es6",
+    "ecmascript",
+    "6",
+    "quiz",
+    "ecma2015",
+    "es2015",
+    "ecmascript",
+    "javascript",
+    "test"
+  ],
+  "author": "Afonso Matos <contact@afonsomatos.com> (http://afonsomatos.com)",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/afonsomatos/es6-quiz/issues"
+  },
+  "homepage": "https://github.com/afonsomatos/es6-quiz#readme"
+}
