@@ -34,7 +34,7 @@ function loadQuestions (num = null) {
 
     // Load the plugins
     let list = JSON.parse(
-        fs.readFileSync('./plugins/plugin-list.json')
+        fs.readFileSync('./plugins/plugins.json')
         ).plugins;
 
     // Set some boundaries
@@ -44,7 +44,7 @@ function loadQuestions (num = null) {
     while (num--) {
         // Select a random index
         let index = Math.floor( Math.random() * list.length),
-            name  = list[index];
+            name  = list.splice(index, 1);
         // Let's get the configuration of the question
         let obj = JSON.parse(
             fs.readFileSync(`./plugins/${name}/plugin.json`)
