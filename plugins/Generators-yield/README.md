@@ -1,9 +1,11 @@
-The answer to the problem is: 1
+## Generators-yield
 
-1) The generator is called and returns an iterator
+The answer to this problem is `1`.
 
-2) i is now an iterator
+1. A generator function is created within the `for-of` loop
 
-3) i assumes the value of yield
+A generator is an iterator and it returns the next value *yielded* when `.next()` is called. To create an iterable from a generator, you call `generator()`.
 
-4) The console logs i: '1'
+2. The `for-of` loop creates an *iterable*, i and assigns each value yielded with `.next()` to that variable till there is nothing else to yield.
+
+3. Because there is only one thing to yield, the `for-of` loop only runs once, and then it outputs via `console.log` the value that was yielded, `1`.

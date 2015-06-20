@@ -1,7 +1,7 @@
 {
     "intro": "What does the following log to the console?",
     "answers": [
-        "Nothing",
+        "(nothing)",
         "1",
         "undefined",
         "null"

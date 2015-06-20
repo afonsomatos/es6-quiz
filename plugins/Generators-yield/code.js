@@ -1,3 +1,6 @@
-function* g() { yield 1; }
+function* g() { 
+    yield 1;
+}
 
-for (let i of g()) console.log(i);
+for (let i of g())
+    console.log(i);
