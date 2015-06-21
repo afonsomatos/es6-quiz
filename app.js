@@ -80,7 +80,8 @@ function showScore () {
         : 0;
     
     log('',
-        'FINAL SCORE'.rainbow.bold+ ': ' + `${score}%`.bold.white);
+        'FINAL SCORE'.rainbow.bold+ ': ' + `${score}%`.bold.white,
+        'Please visit our github page and make plugins of your own!');
 
     return process.exit();
 }
