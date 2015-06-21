@@ -1,6 +1,6 @@
 {
   "name": "es6-quiz",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "EcmaScript 6 Quiz written in ES6 to run in the command line",
   "main": "index.js",
   "dependencies": {
